@@ -3,7 +3,7 @@
 A modern, elegant personal finance management application built with **Next.js 15**, **TypeScript**, and **Recharts**.
 
 ## 🌐 Live Demo
-🔗 [Update after Vercel deployment]
+🔗 (https://finance-tracker-gsh7.vercel.app/)
 
 ## ✨ Features
 - 📊 Dashboard with real-time balance overview
