@@ -298,10 +298,16 @@ export default function Home() {
                                 {(['all', 'income', 'expense'] as const).map(type => (
                                     <button key={type} onClick={() => setFilterType(type)} style={{
                                         padding: '12px 18px', borderRadius: '12px', fontSize: '13px', fontWeight: 600,
-                                        border: 'none', cursor: 'pointer', textTransform: 'capitalize', transition: 'all 0.2s',
-                                        background: filterType === type ? (type === 'income' ? 'rgba(34,197,94,0.2)' : type === 'expense' ? 'rgba(239,68,68,0.2)' : `rgba(201,168,76,0.2)`) : 'rgba(255,255,255,0.04)',
-                                        color: filterType === type ? (type === 'income' ? '#4ade80' : type === 'expense' ? '#f87171' : gold) : '#666',
-                                        border: filterType === type ? `1px solid ${type === 'income' ? 'rgba(34,197,94,0.4)' : type === 'expense' ? 'rgba(239,68,68,0.4)' : 'rgba(201,168,76,0.4)'}` : '1px solid rgba(255,255,255,0.06)',
+                                        cursor: 'pointer', textTransform: 'capitalize', transition: 'all 0.2s',
+                                        background: filterType === type
+                                            ? (type === 'income' ? 'rgba(34,197,94,0.2)' : type === 'expense' ? 'rgba(239,68,68,0.2)' : 'rgba(201,168,76,0.2)')
+                                            : 'rgba(255,255,255,0.04)',
+                                        color: filterType === type
+                                            ? (type === 'income' ? '#4ade80' : type === 'expense' ? '#f87171' : gold)
+                                            : '#666',
+                                        border: `1px solid ${filterType === type
+                                            ? (type === 'income' ? 'rgba(34,197,94,0.4)' : type === 'expense' ? 'rgba(239,68,68,0.4)' : 'rgba(201,168,76,0.4)')
+                                            : 'rgba(255,255,255,0.06)'}`,
                                     } as React.CSSProperties}>
                                         {type === 'all' ? '🔀' : type === 'income' ? '📈' : '📉'} {type}
                                     </button>
